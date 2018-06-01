@@ -2,11 +2,11 @@ package com.ebig.easy_soket;
 
 import android.os.Bundle;
 
-import com.ebig.easy_socket.common.AsyncTaskUI;
+import com.ebig.easy_socket.common.AsyncUI;
 
 import java.lang.ref.WeakReference;
 
-public class MainActivity extends AsyncTaskUI {
+public class MainActivity extends AsyncUI {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -15,17 +15,17 @@ public class MainActivity extends AsyncTaskUI {
     }
 
     @Override
-    protected void onPreExecute(WeakReference<AsyncTaskUI> weakUI) {
+    protected void onPreExecute(WeakReference<AsyncUI> weakUI) {
 
     }
 
     @Override
-    protected Object doInBackground(WeakReference<AsyncTaskUI> weakUI, Object... objects) {
+    protected Object doInBackground(WeakReference<AsyncUI> weakUI, Object... objects) {
         return null;
     }
 
     @Override
-    protected void onPreExecuteTask(WeakReference<AsyncTaskUI> weakUI, Object o) {
+    protected void onPreExecuteTask(WeakReference<AsyncUI> weakUI, Object o) {
 
     }
 }

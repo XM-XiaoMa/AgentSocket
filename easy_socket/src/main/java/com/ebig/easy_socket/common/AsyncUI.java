@@ -8,19 +8,19 @@ import java.lang.ref.WeakReference;
 
 /**
  * @author Is-Poson
- * @time 2018/5/31  21:58
+ * @time 2018/6/1  16:35
  * @desc ${TODO}
  */
 
-public abstract class AsyncTaskUI extends AppCompatActivity {
+public abstract class AsyncUI extends AppCompatActivity {
 
-    protected abstract void onPreExecute(WeakReference<AsyncTaskUI> weakUI);
+    protected abstract void onPreExecute(WeakReference<AsyncUI> weakUI);
 
-    protected abstract Object doInBackground(WeakReference<AsyncTaskUI> weakUI, Object... objects);
+    protected abstract Object doInBackground(WeakReference<AsyncUI> weakUI, Object... objects);
 
-    protected abstract void onPreExecuteTask(WeakReference<AsyncTaskUI> weakUI, Object o);
+    protected abstract void onPreExecuteTask(WeakReference<AsyncUI> weakUI, Object o);
 
-    protected void onPreExecuteTaskError(WeakReference<AsyncTaskUI> weakUI, Exception e) {
+    protected void onPreExecuteTaskError(WeakReference<AsyncUI> weakUI, Exception e) {
         Toast.makeText(weakUI.get().getApplicationContext(), "", Toast.LENGTH_SHORT).show();
     }
 
@@ -33,11 +33,11 @@ public abstract class AsyncTaskUI extends AppCompatActivity {
         }
 
 
-        private WeakReference<AsyncTaskUI> weakUI;
+        private WeakReference<AsyncUI> weakUI;
 
-        public ActionTask(AsyncTaskUI ui) {
+        public ActionTask(AsyncUI ui) {
             if (weakUI == null)
-                weakUI = new WeakReference<AsyncTaskUI>(ui);
+                weakUI = new WeakReference<AsyncUI>(ui);
         }
 
         @Override
@@ -72,4 +72,5 @@ public abstract class AsyncTaskUI extends AppCompatActivity {
 
         }
     }
+
 }
